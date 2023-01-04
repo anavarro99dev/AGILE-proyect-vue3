@@ -34,10 +34,10 @@ import Switch from "./Switch.vue";
       display: flex;
       align-items: center;
       padding: 0 1rem;
-      input{
+      input {
         border: none;
         background-color: inherit;
-        &:focus{
+        &:focus {
           outline: none;
         }
       }
@@ -48,7 +48,7 @@ import Switch from "./Switch.vue";
       height: 3rem;
       border: none;
       border-radius: 2rem;
-      &:focus{
+      &:focus {
       }
     }
   }
