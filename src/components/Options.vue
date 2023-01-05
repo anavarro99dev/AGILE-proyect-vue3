@@ -4,10 +4,10 @@
       <Switch> </Switch>
     </div>
     <div class="option--city">
-      <div class="option--input-container">
-        <input type="text" placeholder="Enter a city name" />
-      </div>
-      <button type="submit">submit</button>
+      <label class="option--input-container" id="city-name">
+        <input id="city-name" type="text" placeholder="Enter a city name" />
+      </label>
+      <button>submit</button>
     </div>
   </div>
 </template>
@@ -47,6 +47,8 @@ import Switch from "./Switch.vue";
   }
 }
 .option--input-container {
+  cursor: text;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,9 +59,8 @@ import Switch from "./Switch.vue";
 
   height: 4rem;
   flex-basis: 60%;
-  // padding: 0 1rem;
-
   input {
+    cursor: inherit;
     color: #6F6969;
 
     border: none;
