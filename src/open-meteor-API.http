@@ -1,0 +1,23 @@
+# Obtiene la Temperatura (Celcius) y la Humedad.
+https://api.open-meteo.com/v1/
+forecast
+?latitude=22.00
+&longitude=-79.50
+&hourly=temperature_2m,relativehumidity_2m
+&past_days=1
+&temperature_unit=celsius
+
+###
+
+# Obtiene la Temperatura (Fahrenheit) y la Humedad.
+https://api.open-meteo.com/v1/forecast
+?latitude=22.00
+&longitude=-79.50
+&hourly=temperature_2m,relativehumidity_2m
+&past_days=1
+&temperature_unit=fahrenheit
+
+###
+# Obtiene la longitud y latitud relativa a la ciudad.
+https://geocoding-api.open-meteo.com/v1/search
+?name=Cuba
