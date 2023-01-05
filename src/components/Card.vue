@@ -42,16 +42,15 @@
   background-color: #023047;
   border: solid 0.1rem #000000;
   border-radius: 2rem;
-  width: 90vw;
+  width: 85vw;
   height: 25rem;
   margin: 1rem auto;
 }
 
 .card-header {
   display: flex;
-  align-content: space-between;
+  justify-content: space-around;
   width: inherit;
-  justify-content: space-evenly;
   span {
     font-size: 1.2rem;
   }
