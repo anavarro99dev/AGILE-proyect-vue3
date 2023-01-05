@@ -32,12 +32,17 @@ import Switch from "./Switch.vue";
   display: flex;
   justify-content: space-between;
   button {
+    cursor: pointer;
+
     border: none;
     border-radius: 2rem;
     background-color: #219ebc;
 
     flex-basis: 25%;
     height: 4rem;
+  }
+  button:hover{
+    border: #6F6969 0.1rem solid;
   }
 }
 .option--input-container {
