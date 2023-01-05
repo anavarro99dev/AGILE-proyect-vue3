@@ -37,7 +37,7 @@
   border: solid 0.1rem #000000;
   border-radius: 2rem;
   width: 90vw;
-  height: 15rem;
+  height: 17rem;
   margin: 1rem auto;
 }
 
