@@ -18,21 +18,19 @@ import Switch from "./Switch.vue";
 
 <style lang="scss" scoped>
 .option-container {
-  width: 90vw;
   margin: 0 auto;
   font-size: 1.5rem;
 }
 .option--units-select {
   display: flex;
   justify-content: flex-end;
-  padding: 0.5rem 0.5rem;
 }
 .option--city {
   display: flex;
   justify-content: space-between;
   button {
+    flex-basis: 25%;
     background-color: #219ebc;
-    width: 6.5rem;
     height: 4rem;
     border: none;
     border-radius: 2rem;
@@ -42,6 +40,7 @@ import Switch from "./Switch.vue";
   border-style: none;
   background-color: #ecececfa;
   height: 4rem;
+  flex-basis: 60%;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;

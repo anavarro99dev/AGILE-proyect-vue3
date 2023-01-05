@@ -42,9 +42,7 @@
   background-color: #023047;
   border: solid 0.1rem #000000;
   border-radius: 2rem;
-  width: 85vw;
   height: 25rem;
-  margin: 1rem auto;
 }
 
 .card-header {
@@ -67,8 +65,6 @@
 
 .card--body {
   font-size: 1.6rem;
-  table {
-  }
   span {
     margin-left: 0.2rem;
   }
