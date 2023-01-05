@@ -1,6 +1,8 @@
+/* CSS Reset */
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  --font: 'Roboto', sans-serif;
+  font-family: var(--font);
+  font-size: 10px;
   line-height: 24px;
   font-weight: 400;
 
@@ -11,11 +13,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-html{
-  font-size: 62.5%;
-}
-
-/* CSS Reset */
 /* Box sizing rules */
 *,
 *::before,
