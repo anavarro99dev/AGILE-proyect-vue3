@@ -46,6 +46,9 @@
   justify-content: space-evenly;
   font-size: 1rem;
   margin: 1rem;
+  span{
+    font-size: 0.95rem;
+  }
 }
 
 .card-header--icon {
@@ -59,10 +62,13 @@
   margin: 2rem 0;
   table {
     margin: 0 auto;
-    border-collapse: 2rem;
+    font-size: 0.95rem;
   }
   span {
-    margin-left: 0.3rem;
+    margin-left: 0.2rem;
+  }
+  h3{
+    font-size: 2rem;
   }
 }
 .content::after {
