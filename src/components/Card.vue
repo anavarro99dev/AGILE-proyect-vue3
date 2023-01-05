@@ -1,7 +1,7 @@
 <template>
   <div class="card-container">
     <div class="card-header">
-      <div class="card-header--icon"><span> </span></div>
+      <span class="card-header--icon"><i class="wi wi-cloud"> </i></span>
       <div class="card-header--city">
         <h3>Washington DC</h3>
         <span>38.9072° N, 77.0369° W</span>
@@ -34,8 +34,8 @@
 <style lang="scss" scoped>
 .card-container {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
 
@@ -45,8 +45,8 @@
 
   height: 25rem;
 
-  *{
-    color: #FFFFFF;
+  * {
+    color: #ffffff;
   }
 }
 
@@ -65,10 +65,9 @@
 }
 
 .card-header--icon {
-  background-color: white;
-
-  width: 5rem;
-  height: 5rem;
+  i {
+    font-size: 5rem;
+  }
 }
 
 .card--body {
@@ -82,9 +81,24 @@
 }
 
 .card--icon-delete {
-  background-color: white;
-  
-  width: 3rem;
-  height: 3rem;
+  align-self: center;
+  justify-self: center;
+
+  span {
+    display: inline-block;
+
+    background-image: url("../assets/eliminar.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  span:hover {
+    cursor: pointer;
+    
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 }
 </style>
