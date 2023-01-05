@@ -30,7 +30,7 @@ import Switch from "./Switch.vue";
 }
 .option--city {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   button {
     cursor: pointer;
 
@@ -43,11 +43,13 @@ import Switch from "./Switch.vue";
   }
   button:hover{
     border: #6F6969 0.1rem solid;
+    opacity: 0.8;
   }
 }
 .option--input-container {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   border-style: none;
   border-radius: 0.5rem;
@@ -55,13 +57,15 @@ import Switch from "./Switch.vue";
 
   height: 4rem;
   flex-basis: 60%;
-  padding: 0 1rem;
+  // padding: 0 1rem;
 
   input {
     color: #6F6969;
 
     border: none;
     background-color: inherit;
+
+    width: 85%;
     &:focus {
       outline: none;
     }
