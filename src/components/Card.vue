@@ -42,13 +42,20 @@
   background-color: #023047;
   border: solid 0.1rem #000000;
   border-radius: 2rem;
+
   height: 25rem;
+
+  *{
+    color: #FFFFFF;
+  }
 }
 
 .card-header {
   display: flex;
-  justify-content: space-around;
-  width: inherit;
+  justify-content: space-evenly;
+
+  width: 100%;
+
   span {
     font-size: 1.2rem;
   }
@@ -58,9 +65,10 @@
 }
 
 .card-header--icon {
+  background-color: white;
+
   width: 5rem;
   height: 5rem;
-  background-color: white;
 }
 
 .card--body {
@@ -74,8 +82,9 @@
 }
 
 .card--icon-delete {
+  background-color: white;
+  
   width: 3rem;
   height: 3rem;
-  background-color: white;
 }
 </style>

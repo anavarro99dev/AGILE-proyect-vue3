@@ -18,8 +18,11 @@ import Switch from "./Switch.vue";
 
 <style lang="scss" scoped>
 .option-container {
-  margin: 0 auto;
   font-size: 1.5rem;
+  margin: 0 auto;
+  *{
+    color: #FFFFFF;
+  }
 }
 .option--units-select {
   display: flex;
@@ -29,23 +32,29 @@ import Switch from "./Switch.vue";
   display: flex;
   justify-content: space-between;
   button {
-    flex-basis: 25%;
-    background-color: #219ebc;
-    height: 4rem;
     border: none;
     border-radius: 2rem;
+    background-color: #219ebc;
+
+    flex-basis: 25%;
+    height: 4rem;
   }
 }
 .option--input-container {
-  border-style: none;
-  background-color: #ecececfa;
-  height: 4rem;
-  flex-basis: 60%;
-  border-radius: 0.5rem;
   display: flex;
   align-items: center;
+
+  border-style: none;
+  border-radius: 0.5rem;
+  background-color: #ecececfa;
+
+  height: 4rem;
+  flex-basis: 60%;
   padding: 0 1rem;
+
   input {
+    color: #6F6969;
+
     border: none;
     background-color: inherit;
     &:focus {
