@@ -1,6 +1,5 @@
 # Obtiene la Temperatura (Celcius) y la Humedad.
-https://api.open-meteo.com/v1/
-forecast
+https://api.open-meteo.com/v1/forecast
 ?latitude=22.00
 &longitude=-79.50
 &hourly=temperature_2m,relativehumidity_2m

@@ -3,25 +3,32 @@
     <div class="card-header">
       <span class="card-header--icon"><i class="wi wi-cloud"> </i></span>
       <div class="card-header--city">
-        <h3>Washington DC</h3>
-        <span>38.9072° N, 77.0369° W</span>
+        <h3>{{ geocode_data.name }}</h3>
+        <!-- TODO: codigo para detectar cuando es latitud(norte, sur), longitud(este, oeste) -->
+        <span
+          >{{ geocode_data.latitude }}° N, {{ geocode_data.longitude }}° W</span
+        >
       </div>
     </div>
     <div class="card--body">
       <table>
         <tr>
           <td><span class="content">TODAY</span></td>
-          <td><span class="content">SUN</span></td>
-          <td><span class="content">MON</span></td>
-          <td><span class="content">TUE</span></td>
-          <td><span>WED</span></td>
+          <td v-for="(val, index) in data.slice(0, 4)">
+            <span
+              :class="
+                // Para que la clase 'content' no se aplique al ultimo elemento
+                index < dataTF.slice(0, 4).length - 1 ? 'content' : ' '
+              "
+            >
+              {{ list_day[val.day] }}</span
+            >
+          </td>
         </tr>
         <tr>
-          <td><span>22°</span></td>
-          <td><span>23°</span></td>
-          <td><span>24°</span></td>
-          <td><span>25°</span></td>
-          <td><span>19°</span></td>
+          <td v-for="(val, index) in data">
+            <span> {{ val.temperature_media }}°</span>
+          </td>
         </tr>
       </table>
     </div>
@@ -29,7 +36,32 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useStore } from "../store/store";
+import { geocode, openMeteor } from "../store/data";
+import { ref, watch } from "vue";
+
+const store = useStore();
+let geocode_data = ref(await geocode(store.city_name));
+let list_day = ref(["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]);
+
+let dataTF = (
+  await openMeteor(geocode_data.value.latitude, geocode_data.value.longitude)
+).dataTF;
+let dataTC = (
+  await openMeteor(geocode_data.value.latitude, geocode_data.value.longitude)
+).dataTC;
+let data = ref(dataTF);
+
+watch(
+  () => store.temperature,
+  (val) => {
+    if (val) data.value = dataTC;
+    else data.value = dataTF;
+    console.log(val);
+  }
+);
+</script>
 
 <style lang="scss" scoped>
 .card-container {
@@ -59,6 +91,7 @@
   span {
     font-size: 1.2rem;
   }
+
   h3 {
     font-size: 2rem;
   }
@@ -72,10 +105,15 @@
 
 .card--body {
   font-size: 1.6rem;
+
   span {
-    margin-left: 0.2rem;
+    margin-left: 0.4rem;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
   }
 }
+
 .content::after {
   content: " | ";
 }
@@ -90,13 +128,14 @@
     background-image: url("../assets/eliminar.svg");
     background-repeat: no-repeat;
     background-size: contain;
-    
+
     width: 2.5rem;
     height: 2.5rem;
   }
+
   span:hover {
     cursor: pointer;
-    
+
     width: 3.5rem;
     height: 3.5rem;
   }

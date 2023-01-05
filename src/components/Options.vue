@@ -5,23 +5,26 @@
     </div>
     <div class="option--city">
       <label class="option--input-container" id="city-name">
-        <input id="city-name" type="text" placeholder="Enter a city name" />
+        <!-- TODO: mostar una data list con sugerencias con respecto a lo tecleado -->
+        <input id="city-name" type="text" placeholder="Enter a city name" v-model="store.city_name"/>
       </label>
-      <button>submit</button>
+      <button @click="store.increment" >submit</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Switch from "./Switch.vue";
+import { useStore } from "../store/store";
+let store = useStore();
 </script>
 
 <style lang="scss" scoped>
 .option-container {
   font-size: 1.5rem;
   margin: 0 auto;
-  *{
-    color: #FFFFFF;
+  * {
+    color: #ffffff;
   }
 }
 .option--units-select {
@@ -41,8 +44,8 @@ import Switch from "./Switch.vue";
     flex-basis: 25%;
     height: 4rem;
   }
-  button:hover{
-    border: #6F6969 0.1rem solid;
+  button:hover {
+    border: #6f6969 0.1rem solid;
     opacity: 0.8;
   }
 }
@@ -61,7 +64,7 @@ import Switch from "./Switch.vue";
   flex-basis: 60%;
   input {
     cursor: inherit;
-    color: #6F6969;
+    color: #6f6969;
 
     border: none;
     background-color: inherit;

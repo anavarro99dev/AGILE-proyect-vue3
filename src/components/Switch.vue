@@ -1,11 +1,14 @@
 <template>
   <label class="switch">
-    <input type="checkbox" />
+    <input type="checkbox" v-model="store.temperature" />
     <div class="slider round"></div>
   </label>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useStore } from "../store/store";
+let store = useStore();
+</script>
 
 <style lang="scss" scoped>
 /* Formateamos el label que servirá de contenedor */
@@ -29,7 +32,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #99A4A9;
+  background-color: #99a4a9;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -42,14 +45,14 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #ECECEC;
+  background-color: #ececec;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 /* Cambiamos el color de fondo cuando el checkbox esta activado */
 input:checked + .slider {
-  background-color: #99A4A9;
+  background-color: #99a4a9;
 }
 
 /* Deslizamos el slider a la derecha cuando el checkbox esta activado */
