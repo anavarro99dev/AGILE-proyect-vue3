@@ -20,6 +20,7 @@ import Switch from "./Switch.vue";
 .option-container {
   width: 90vw;
   margin: 0 auto;
+  font-size: 1.5rem;
 }
 .option--units-select {
   display: flex;
@@ -28,11 +29,11 @@ import Switch from "./Switch.vue";
 }
 .option--city {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   button {
     background-color: #219ebc;
-    width: 4.5rem;
-    height: 3rem;
+    width: 6.5rem;
+    height: 4rem;
     border: none;
     border-radius: 2rem;
   }
@@ -40,7 +41,7 @@ import Switch from "./Switch.vue";
 .option--input-container {
   border-style: none;
   background-color: #ecececfa;
-  height: 3rem;
+  height: 4rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
