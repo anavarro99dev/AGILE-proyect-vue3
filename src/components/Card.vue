@@ -1,5 +1,8 @@
 <template>
-  <div class="card-container" v-if="!hide">
+  <div
+    class="card-container"
+    v-if="!hide"
+    :style=" color_card ">
     <div class="card-header">
       <span class="card-header--icon"><i class="wi wi-cloud"> </i></span>
       <div class="card-header--city">
@@ -61,9 +64,15 @@ watch(
   (val) => {
     if (val) data.value = dataTC;
     else data.value = dataTF;
-    console.log(val);
   }
 );
+
+let color_card = ref({
+  'background-color' :  store.temperature ?
+  (data.value[0].temperature_media>30 ? '#FFB703':'#023047') :
+  (data.value[0].temperature_media>86 ? '#FFB703':'#023047')
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -74,7 +83,7 @@ watch(
   justify-items: center;
   align-items: center;
 
-  background-color: #023047;
+  // background-color: #023047;
   border: solid 0.1rem #000000;
   border-radius: 2rem;
 
