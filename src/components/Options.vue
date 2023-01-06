@@ -5,10 +5,16 @@
     </div>
     <div class="option--city">
       <label class="option--input-container" id="city-name">
-        <!-- TODO: mostar una data list con sugerencias con respecto a lo tecleado -->
-        <input id="city-name" type="text" placeholder="Enter a city name" v-model="store.city_name"/>
+        <!-- Obtencion del nombre de la ciudad -->
+        <input
+          id="city-name"
+          type="text"
+          placeholder="Enter a city name"
+          v-model="store.city_name"
+        />
       </label>
-      <button @click="store.increment" >submit</button>
+      <!-- Adicionar Card -->
+      <button @click="store.increment">submit</button>
     </div>
   </div>
 </template>
@@ -16,11 +22,15 @@
 <script setup lang="ts">
 import Switch from "./Switch.vue";
 import { useStore } from "../store/store";
+
+// Variable guardada publica para todos los componentes 
 let store = useStore();
 </script>
 
 <style lang="scss" scoped>
 .option-container {
+  width: 100%;
+
   font-size: 1.5rem;
   margin: 0 auto;
   * {
@@ -30,6 +40,12 @@ let store = useStore();
 .option--units-select {
   display: flex;
   justify-content: flex-end;
+
+  padding: 1rem;
+  @media screen and (min-width: 1100px) {
+    padding: 5vh 0;
+    width: 95vw;
+  }
 }
 .option--city {
   display: flex;
@@ -47,6 +63,16 @@ let store = useStore();
   button:hover {
     border: #6f6969 0.1rem solid;
     opacity: 0.8;
+  }
+  @media screen and (min-width: 650px) {
+    max-width: 70rem;
+    margin: 0 auto;
+    button {
+      flex-basis: 15%;
+    }
+    .option--input-container {
+      flex-basis: 70%;
+    }
   }
 }
 .option--input-container {

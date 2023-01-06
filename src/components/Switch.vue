@@ -1,30 +1,33 @@
 <template>
   <label class="switch">
+    <!-- Obtencion del la unidad de medida -->
     <input type="checkbox" v-model="store.temperature" />
-    <div class="slider round"></div>
+    <div class="slider round">
+      <span v-show="store.temperature" class="F">F</span>
+      <span v-show="!store.temperature" class="C">C</span>
+    </div>
   </label>
 </template>
 
 <script lang="ts" setup>
 import { useStore } from "../store/store";
+
+// Variable guardada publica para todos los componentes
 let store = useStore();
 </script>
 
 <style lang="scss" scoped>
-/* Formateamos el label que servirá de contenedor */
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 7.5rem;
+  height: 3.5rem;
 }
 
-/* Ocultamos el checkbox html */
 .switch input {
   display: none;
 }
 
-/* Formateamos la caja del interruptor sobre la cual se deslizará la perilla de control o slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -37,37 +40,49 @@ let store = useStore();
   transition: 0.4s;
 }
 
-/* Pintamos la perilla de control o slider usando el selector before */
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 2.5rem;
+  width: 2.5rem;
+  left: 0.5rem;
+  bottom: 0.55rem;
   background-color: #ececec;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
-/* Cambiamos el color de fondo cuando el checkbox esta activado */
 input:checked + .slider {
   background-color: #99a4a9;
 }
 
-/* Deslizamos el slider a la derecha cuando el checkbox esta activado */
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(4rem);
+  -ms-transform: translateX(4rem);
+  transform: translateX(4rem);
 }
 
-/* Aplicamos efecto de bordes redondeados en slider y en el fondo del slider */
 .slider.round {
   border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.slider {
+  span {
+    color: #0230479c;
+    position: absolute;
+    user-select: none;
+  }
+  .C {
+    left: 5rem;
+    bottom: 0.6rem;
+  }
+  .F {
+    left: 1rem;
+    bottom: 0.6rem;
+  }
 }
 </style>

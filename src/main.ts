@@ -1,11 +1,12 @@
-import { createApp } from 'vue'
+import { createApp } from "vue";
 import { createPinia } from "pinia";
-import './style.css'
+import "./style.css";
 
-import 'weather-icons/css/weather-icons.min.css'
+import "weather-icons/css/weather-icons.min.css";
 
-import App from './App.vue'
+// TODO: Agregar funcionalidad adicional => tooltips para mostrar la bandera del pais (circle-flags)
 
-createApp(App)
-.use( createPinia() )
-.mount('#app')
+
+import App from "./App.vue";
+
+createApp(App).use(createPinia()).mount("#app");
