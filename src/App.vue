@@ -62,6 +62,7 @@ body {
   color: #9faaae;
   span {
     font-size: 2rem;
+    margin: 0 2rem;
   }
   i {
     margin: 0 auto;
