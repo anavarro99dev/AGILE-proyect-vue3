@@ -104,7 +104,7 @@ watch(
   justify-items: center;
   align-items: center;
 
-  border: solid 0.1rem #000000;
+  border: solid 0.1rem #424242;
   border-radius: 2rem;
 
   height: 25rem;
