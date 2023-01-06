@@ -5,6 +5,7 @@ https://api.open-meteo.com/v1/forecast
 &hourly=temperature_2m,relativehumidity_2m
 &past_days=1
 &temperature_unit=celsius
+&current_weather=true
 
 ###
 

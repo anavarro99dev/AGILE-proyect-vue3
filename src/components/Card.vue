@@ -57,7 +57,7 @@ let dataTF = (
 let dataTC = (
   await openMeteor(geocode_data.value.latitude, geocode_data.value.longitude)
 ).dataTC;
-let data = ref(dataTF);
+let data = ref( !store.temperature ? dataTF : dataTC );
 
 watch(
   () => store.temperature,
@@ -83,7 +83,6 @@ let color_card = ref({
   justify-items: center;
   align-items: center;
 
-  // background-color: #023047;
   border: solid 0.1rem #000000;
   border-radius: 2rem;
 
@@ -96,9 +95,10 @@ let color_card = ref({
 
 .card-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   width: 100%;
+  padding: 0 4rem;
 
   span {
     font-size: 1.2rem;
@@ -106,6 +106,9 @@ let color_card = ref({
 
   h3 {
     font-size: 2rem;
+  }
+  .card-header--city{
+    margin: 0 auto;
   }
 }
 
