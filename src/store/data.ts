@@ -9,7 +9,7 @@ const openMeteorAPI = axios.create({
 });
 
 async function geocode(name: string) {
-  const res = await geocodeAPI.get("search?name=" + name);
+  const res = await geocodeAPI.get(`search?name=${name}&count=1`);
   const data = await res.data.results[0];
   return {
     id: data.id,

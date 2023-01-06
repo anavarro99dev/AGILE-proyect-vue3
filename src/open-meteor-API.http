@@ -19,4 +19,5 @@ https://api.open-meteo.com/v1/forecast
 ###
 # Obtiene la longitud y latitud relativa a la ciudad.
 https://geocoding-api.open-meteo.com/v1/search
-?name=Cuba
+?name=Berlin
+&count=1
