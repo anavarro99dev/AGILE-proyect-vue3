@@ -54,7 +54,7 @@ let store = useStore();
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   border-style: none;
   border-radius: 0.5rem;
@@ -62,6 +62,7 @@ let store = useStore();
 
   height: 4rem;
   flex-basis: 60%;
+  padding: 0 1rem;
   input {
     cursor: inherit;
     color: #6f6969;

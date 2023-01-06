@@ -25,8 +25,8 @@ async function openMeteor(
   latitude: number,
   longitude: number,
 ) {
-  const resTC = await openMeteorAPI.get(`forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m&past_days=1&temperature_unit=celsius`);
-  const resTF = await openMeteorAPI.get(`forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m&past_days=1&temperature_unit=fahrenheit`);
+  const resTC = await openMeteorAPI.get(`forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m&past_days=1&temperature_unit=celsius&current_weather=true`);
+  const resTF = await openMeteorAPI.get(`forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m&past_days=1&temperature_unit=fahrenheit&current_weather=true`);
 
   return {
     dataTC: getData( await resTC.data ),
@@ -41,15 +41,15 @@ function getData(data:any) {
   const temperature_data: number[] = data.hourly.temperature_2m;
   const relativehumidity_data: number[] = data.hourly.relativehumidity_2m;
 
-  //   Crear tabla
+  // Crear tabla
   const table: (string | number)[][] = [];
 
-  //   Agregar elementos a la tabla
+  // Agregar elementos a la tabla
   for (let i = 0; i < time_data.length; i++) {
     table.push([time_data[i] , temperature_data[i], relativehumidity_data[i]]);
   }
 
-  //   Reducir tabla con el promedio de los dias.
+  // Reducir tabla con el promedio de los dias.
   const day: Object[] = [];
   const temp: any = [];
 
@@ -63,7 +63,8 @@ function getData(data:any) {
       relativehumidity: Math.round(// Promedio de la humedad ralatica del dia.
         temp[i - 1].map((val: any) => val[2]).reduce((a:number, b:number) => a + b) / 24
       ),
-      day: new Date( temp[i-1][0][0] ).getUTCDay() // Obtencion del dia de la semana.
+      day: new Date( temp[i-1][0][0] ).getUTCDay(), // Obtencion del dia de la semana actual.
+      weathercode: data.current_weather.weathercode // Obtencion del codigo del dia de la semana actual.
     });
   }
   return day;

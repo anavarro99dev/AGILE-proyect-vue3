@@ -4,7 +4,12 @@
     v-if="!hide"
     :style=" color_card ">
     <div class="card-header">
-      <span class="card-header--icon"><i class="wi wi-cloud"> </i></span>
+      <span
+        class="card-header--icon">
+        <i 
+        :class="'wi ' + icon
+        ">
+        </i></span>
       <div class="card-header--city">
         <h3>{{ geocode_data.name }}</h3>
         <!-- TODO: codigo para detectar cuando es latitud(norte, sur), longitud(este, oeste) -->
@@ -43,6 +48,7 @@
 <script setup lang="ts">
 import { useStore } from "../store/store";
 import { geocode, openMeteor } from "../store/data";
+import { code_data } from "../store/weathercode.json";
 import { ref, watch } from "vue";
 
 let hide = ref(false);
@@ -59,6 +65,16 @@ let dataTC = (
 ).dataTC;
 let data = ref( !store.temperature ? dataTF : dataTC );
 
+let color_card = ref({
+  'background-color' :  store.temperature ?
+  // 30C = 86F => 22C = 71F para pruebas
+  (data.value[0].temperature_media>=22 ? '#FFB703':'#023047') :
+  (data.value[0].temperature_media>=71 ? '#FFB703':'#023047')
+})
+
+let icon = ref( code_data.find( (val)=>val.num==data.value[0].weathercode ).icon  );
+console.log(icon.value);
+
 watch(
   () => store.temperature,
   (val) => {
@@ -66,12 +82,6 @@ watch(
     else data.value = dataTF;
   }
 );
-
-let color_card = ref({
-  'background-color' :  store.temperature ?
-  (data.value[0].temperature_media>30 ? '#FFB703':'#023047') :
-  (data.value[0].temperature_media>86 ? '#FFB703':'#023047')
-})
 
 </script>
 

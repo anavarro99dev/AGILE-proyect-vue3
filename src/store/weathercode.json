@@ -1,0 +1,33 @@
+{
+  "code_data": [
+    { "name":"clear_sky", "num": 0, "icon": "wi-day-sunny" },
+    { "name":"mainly_clear", "num": 1, "icon": "wi-day-sunny-overcast" },
+    { "name":"partly_cloudy", "num": 2, "icon": "wi-cloud" },
+    { "name":"overcast", "num": 3, "icon": "wi-cloudy" },
+    { "name":"fog", "num": 45, "icon": "wi-smoke" },
+    { "name":"depositing_rime_fog", "num": 48, "icon": "wi-smog" },
+    { "name":"drizzle__light", "num": 51, "icon": "wi-sprinkle" },
+    { "name":"drizzle__moderate", "num": 53, "icon": "wi-showers" },
+    { "name":"drizzle__dense", "num": 55, "icon": "wi-storm-showers" },
+    { "name":"freezing_drizzle__light", "num": 56, "icon": "wi-snow" },
+    { "name":"freezing_drizzle__dense", "num": 57, "icon": "wi-snow-wind" },
+    { "name":"rain__slight", "num": 61, "icon": "wi-sleet" },
+    { "name":"rain__moderate", "num": 63, "icon": "wi-hail" },
+    { "name":"rain__heavy", "num": 65, "icon": "wi-storm-showers" },
+    { "name":"freezing_rain__light", "num": 66, "icon": "wi-snow" },
+    { "name":"freezing_rain__heavy", "num": 67, "icon": "wi-snow-wind" },
+    { "name":"snow_fall__slight", "num": 71, "icon": "wi-snow" },
+    { "name":"snow_fall__moderate", "num": 73, "icon": "wi-snow" },
+    { "name":"snow_fall__heavy", "num": 75, "icon": "wi-snow" },
+    { "name":"snow_grains", "num": 77, "icon": "wi-snowflake-cold" },
+    { "name":"rain_showers__slight", "num": 80, "icon": "wi-rain" },
+    { "name":"rain_showers__moderate", "num": 81, "icon": "wi-rain-wind" },
+    { "name":"rain_showers__violent", "num": 82, "icon": "wi-storm-showers" },
+    { "name":"snow_showers__slight", "num": 85, "icon": "wi-snow" },
+    { "name":"snow_showers__heavy", "num": 86, "icon": "wi-snow-wind" },
+    { "name":"thunderstorm__slight", "num": 95, "icon": "wi-storm-showers" },
+    { "name":"thunderstorm__moderate", "num": 95, "icon": "wi-thunderstorm" },
+    { "name":"thunderstorm__freezing_slight", "num": 96, "icon": "wi-storm-showers" },
+    { "name":"thunderstorm__freezing_moderate", "num": 99, "icon": "wi-thunderstorm" }
+  ]
+}
