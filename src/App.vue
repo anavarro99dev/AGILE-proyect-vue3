@@ -5,11 +5,11 @@
       <i class="wi wi-day-cloudy"></i>
       <span>Submit a city to fill up this space</span>
     </div>
-    <Suspense>
-      <div class="row-container">
-        <Card v-for="n in store.counter"></Card>
-      </div>
-    </Suspense>
+      <Suspense>
+        <div class="row-container">
+          <Card v-for="n in store.counter"></Card>
+        </div>
+      </Suspense>
   </div>
 </template>
 
@@ -44,10 +44,6 @@ body {
   flex-wrap: wrap;
 
   @media screen and (min-width: 1100px) {
-    flex-wrap: nowrap;
-
-    overflow-x: auto;
-
     margin: 10vh 0 !important;
   }
   @media screen and (min-width: 520px) {
