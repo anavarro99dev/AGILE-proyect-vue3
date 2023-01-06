@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" v-if="!hide">
     <div class="card-header">
       <span class="card-header--icon"><i class="wi wi-cloud"> </i></span>
       <div class="card-header--city">
@@ -32,7 +32,8 @@
         </tr>
       </table>
     </div>
-    <div class="card--icon-delete"><span> </span></div>
+    <!-- Eliminar tarjeta actual -> no es lo mas optimo pero si lo mas sencillo -->
+    <div class="card--icon-delete"><span @click="()=>hide = true"> </span></div>
   </div>
 </template>
 
@@ -40,6 +41,8 @@
 import { useStore } from "../store/store";
 import { geocode, openMeteor } from "../store/data";
 import { ref, watch } from "vue";
+
+let hide = ref(false);
 
 const store = useStore();
 let geocode_data = ref(await geocode(store.city_name));

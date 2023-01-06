@@ -5,7 +5,7 @@ export const useStore = defineStore("store", {
     return { 
         card_list: 0,
         city_name: "",
-        temperature: false
+        temperature: false,
     };
   },
   actions: {
